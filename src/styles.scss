@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700&display=swap');
+
+@import 'themes';
+
+@import '@nebular/theme/styles/globals';
+
+/* Necessário para a utilização do ToasrR */
+@import 'ngx-toastr/toastr';
+
+@import 'bootstrap/scss/bootstrap-utilities';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/tables';
+
+@include nb-install() {
+	@include nb-theme-global();
+}
+
+// Custom
+.pointer {
+	cursor: pointer;
+}
+
+.required {
+	&::after {
+		content: ' *';
+		color: red;
+	}
+}
+
+.border-none {
+	border: none;
+}

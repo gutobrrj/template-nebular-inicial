@@ -1,0 +1,35 @@
+<nb-layout>
+	<nb-layout-column class="d-flex align-items-center justify-content-center p-0">
+		<nb-card class="py-4 px-2" style="border-radius: 10px">
+			<nb-card-body style="max-width: 98%; width: 400px">
+				<h3 class="text-center">Login</h3>
+				<hr />
+				<form class="d-flex flex-column gap-4" [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+					<div>
+						<input
+							nbInput
+							formControlName="username"
+							placeholder="Usuario"
+							type="text"
+							fullWidth
+						/>
+						<control-error controlName="username" />
+					</div>
+
+					<div>
+						<input
+							nbInput
+							formControlName="password"
+							placeholder="Senha"
+							status="primary"
+							type="password"
+							fullWidth
+						/>
+						<control-error controlName="password" />
+					</div>
+					<button nbButton type="submit" status="primary" [disabled]="loginForm.invalid" fullWidth>Login</button>
+				</form>
+			</nb-card-body>
+		</nb-card>
+	</nb-layout-column>
+</nb-layout>
