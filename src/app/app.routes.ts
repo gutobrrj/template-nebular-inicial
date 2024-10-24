@@ -25,10 +25,10 @@ export const routes: Routes = [
 				loadChildren: () => import('./components/layout/menu/submenu/submenu.routes').then((m) => m.SUBMENU01_ROUTES)
 			},
 			
-			{ path: '', pathMatch: 'full', redirectTo: 'dashboard' },
+			{ path: '', pathMatch: 'full', redirectTo: 'auth' },
 			{ path: '**', component: NotFoundComponent } 
 		]
 	},
-	{ path: '', pathMatch: 'full', redirectTo: 'app' }, //Define a rota do cliente quando for vazio '', neste caso redireciona para http://localhost:4200/pages
+	{ path: '', pathMatch: 'full', redirectTo: 'auth' }, //Define a rota do cliente quando for vazio '', neste caso redireciona para http://localhost:4200/pages
 	{ path: '**', redirectTo: 'pages' }	//path: '**': Captura qualquer rota que não tenha um mapeamento específico.
 ];
