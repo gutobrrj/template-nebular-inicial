@@ -27,7 +27,7 @@ const NB_MODULES = [
 })
 export class LoginComponent {
   loginForm!: FormGroup; // Declara a propriedade loginForm do tipo FormGroup, que representa o formulário de login
-
+  requiredMessage: string = 'Campo obrigatório!'; // Mensagem personalizada
   // Construtor do componente
   constructor(
     private loginService: LoginService, // Injeta o serviço de login para realizar autenticações
@@ -40,6 +40,15 @@ export class LoginComponent {
       password: new FormControl('', [Validators.required, Validators.minLength(6)]) // Campo para a senha, que é obrigatório e deve ter pelo menos 6 caracteres
     });
   }
+
+// Adicione um método para obter a mensagem de erro
+getErrorMessage(controlName: string): string {
+  const control = this.loginForm.get(controlName);
+  if (control?.hasError('required')) {
+    return this.requiredMessage; // Retorna a mensagem personalizada
+  }
+  return ''; // Retorna uma string vazia se não houver erro
+}
 
   // Método chamado quando o formulário é enviado
   onSubmit() {

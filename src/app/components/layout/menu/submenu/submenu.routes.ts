@@ -6,7 +6,7 @@ import { SubmenuComponent } from './submenu.component';
 
 export const SUBMENU01_ROUTES: Routes = [
 	{
-		path: '',
+		path: 'usuario',
 		component: SubmenuComponent,
 		children: [
 			{
