@@ -37,7 +37,7 @@ export class MenuService {
 		{
 			title: 'Dashboard',
 			icon: 'home-outline',
-			link: '/'
+			link: '/app/dashboard'
 		},
 		
 		{	//Exibe apenas o submenu com ícone e url definida. É necessário importar .......
@@ -47,7 +47,12 @@ export class MenuService {
 				{
 					title: 'Usuarios',
 					icon: 'people-outline',
-					link: '/app/caminhoTeste/usuarioslist'
+					link: '/app/submenu/submenuRoutesModule/usuarioslist'
+				},
+				{
+					title: 'Clientes',
+					icon: 'people-outline',
+					link: '/app/submenu/submenuRoutesModule/clienteslist'
 				},
 			]
 		}

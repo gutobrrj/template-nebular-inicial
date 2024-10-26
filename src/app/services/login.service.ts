@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'; // Importa o HttpClient para fazer requisições HTTP
-import { Injectable } from '@angular/core'; // Importa o decorador Injectable para permitir que esta classe seja injetada em outros componentes ou serviços
+import { inject, Injectable } from '@angular/core'; // Importa o decorador Injectable para permitir que esta classe seja injetada em outros componentes ou serviços
 import { LoginResponse } from '../models/login-response.type'; // Importa a interface ou tipo LoginResponse que define a estrutura da resposta do login
 import { catchError, tap, throwError } from 'rxjs'; // Importa operadores do RxJS para manipular streams de dados
 
@@ -10,8 +10,9 @@ export class LoginService {
   
   apiUrl: string = "http://localhost:8080/auth/login";  // URL da API onde as requisições de login serão enviadas
 
+  httpClient = inject(HttpClient) // Injeta o HttpClient para fazer chamadas HTTP
  
-  constructor(private httpClient: HttpClient) { }  // Construtor que injeta o HttpClient para fazer chamadas HTTP
+  constructor() { }  
 
   // Método que realiza a autenticação do usuário
   efetuarLogin(username: string, password: string) {

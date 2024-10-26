@@ -24,7 +24,7 @@ export const routes: Routes = [	// Define as rotas da aplicação usando o tipo 
             (m) => m.DASHBOARD_ROUTES ),  // Importa o módulo de rotas do dashboard
       },
       {
-        path: 'caminhoTeste', // Define uma rota de exemplo (caminhoTeste)
+        path: 'submenu', // Define uma rota de exemplo (caminhoTeste)
         canActivate: [AuthGuard], // Aplica o AuthGuard(/service/guards/auth-guard.service) para proteger essa rota
         loadChildren: () => // Carrega as rotas para esta seção de forma assíncrona (lazy loading)
           import('./components/layout/menu/submenu/submenu.routes').then(

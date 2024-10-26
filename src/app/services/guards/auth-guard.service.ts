@@ -9,8 +9,7 @@ export class AuthGuard implements CanActivate { // Define a classe AuthGuard que
 
   constructor(private router: Router) {} // Injeta o serviço Router para que você possa navegar entre as rotas
 
-  // Método canActivate que determina se a rota pode ser ativada
-  canActivate(
+  canActivate(  // Método canActivate que determina se a rota pode ser ativada
     next: ActivatedRouteSnapshot, // O snapshot da rota que está prestes a ser ativada
     state: RouterStateSnapshot // O estado da rota atual
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
