@@ -12,11 +12,11 @@ import { AuthenticationInterceptor } from './services/interceptors/authenticatio
 
 export const appConfig: ApplicationConfig = {
 	providers: [
-		provideRouter(routes),
-		provideAnimations(),	// Necessário para a utilização do Toast
-		provideToastr(),	// Provide inserido para mostrar as mensagens de Toast(sucesso/erro)
-		provideHttpClient(withFetch(), 
-			withInterceptors([AuthenticationInterceptor, spinnerInterceptor])),	// Injetado para poder ser usado de forma global. Por toda aplicação.
-		importProvidersFrom([HttpClientModule, NbThemeModule.forRoot(), NbMenuModule.forRoot(), NbSidebarModule.forRoot()])
-	]
+    provideRouter(routes),
+    provideAnimations(), // Necessário para a utilização do Toast
+    provideToastr(), // Provide inserido para mostrar as mensagens de Toast(sucesso/erro)
+    provideHttpClient(withFetch(), withInterceptors([AuthenticationInterceptor, spinnerInterceptor])), // Injetado para poder ser usado de forma global. Por toda aplicação.
+    importProvidersFrom([HttpClientModule, NbThemeModule.forRoot(), NbMenuModule.forRoot(), NbSidebarModule.forRoot()]),
+    provideAnimations()
+]
 };

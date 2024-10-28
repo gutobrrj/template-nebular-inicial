@@ -13,6 +13,9 @@
 @import 'bootstrap/scss/bootstrap-reboot';
 @import 'bootstrap/scss/tables';
 
+
+
+
 @include nb-install() {
 	@include nb-theme-global();
 }
@@ -32,3 +35,4 @@
 .border-none {
 	border: none;
 }
+@import '@fortawesome/fontawesome-free/css/all.css';

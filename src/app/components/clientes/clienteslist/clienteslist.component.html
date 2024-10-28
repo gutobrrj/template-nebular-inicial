@@ -1,3 +1,52 @@
-<nb-card> 
+<div class="card">
+    <p-toast />
+    <p-toolbar styleClass="mb-4 gap-2">
+        <ng-template pTemplate="left">
+            <h6 class="m-0">Clientes Cadastrados</h6>
+        </ng-template>
 
-</nb-card>
+        <ng-template pTemplate="right">
+            <p-button
+                severity="success" 
+                label="Cadastrar" 
+                icon="pi pi-plus" 
+                class="mr-2" 
+                />
+        </ng-template>
+    </p-toolbar>
+
+    <p-table 
+    [value]="listaClientes" 
+    dataKey="id"
+    styleClass="p-datatable-gridlines" 
+    [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 5rem"></th>
+                <th>Nome</th>
+                <th>CPF/CNPJ</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-cliente let-expanded="expanded">
+            <tr>
+                <td>
+                    <p-button type="button" pRipple [pRowToggler]="cliente" [text]="true" [rounded]="true" [plain]="true" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'" />
+                </td>
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.cpfCnpj }}</td>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="rowexpansion" let-cliente>
+            <tr>
+                <td colspan="7">
+                    <div class="p-3">
+                        <p-table>
+                            
+                        </p-table>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+</p-table>
+</div>
